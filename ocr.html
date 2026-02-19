@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OCR • İsim / Numara</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+  <div class="wrap ocrLayout">
+
+    <!-- SOL PANEL -->
+    <aside class="leftPanel">
+
+      <!-- giriş yapan hesap -->
+      <div class="pill" id="userInfo"></div>
+
+      <!-- foto alanı -->
+      <div class="photoBox">
+        <div class="previewEmpty" id="previewEmpty">Fotoğraf önizleme</div>
+        <img id="previewImg" alt="Önizleme" />
+      </div>
+
+      <!-- butonlar -->
+      <div class="btnStack">
+        <input type="file" id="imgInput" accept="image/*" hidden />
+        <button class="btn block" id="pickBtn">Fotoğraf Seç</button>
+        <button class="btn block" id="runBtn" disabled>OCR Başlat</button>
+        <button class="btn block ghost" id="clearBtn" disabled>Temizle</button>
+      </div>
+
+      <!-- progress -->
+      <div class="progress" id="progressBox" style="display:none;">
+        <div class="progressText" id="progressText">Hazırlanıyor...</div>
+        <div class="bar">
+          <div class="barFill" id="barFill"></div>
+        </div>
+      </div>
+
+      <!-- çıkış -->
+      <button class="btn ghost logoutBtn" id="logoutBtn">Çıkış</button>
+    </aside>
+
+    <!-- SAĞ PANEL -->
+    <main class="rightPanel">
+
+      <!-- üst: sayaç + csv -->
+      <div class="topPills">
+        <div class="pill">ocr sayısı: <span id="ocrCount">0</span></div>
+        <button class="btn ghost" id="copyAllCsvBtn" disabled>Hepsini Kopyala (CSV)</button>
+      </div>
+
+      <div class="resultMeta" id="resultMeta">Henüz OCR yapılmadı.</div>
+
+      <!-- sonuçlar -->
+      <div class="boxesGrid" id="lines"></div>
+    </main>
+
+    <div class="toast" id="toast">Kopyalandı ✅</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

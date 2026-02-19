@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Giriş</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="loginPage">
+    <div class="loginCard">
+      <h1>Panel Giriş</h1>
+      <p>OCR aracını kullanmak için giriş yap.</p>
+
+      <form id="loginForm" class="loginForm" autocomplete="off">
+        <div class="field">
+          <label>Kullanıcı Adı</label>
+          <input id="username" type="text" placeholder="kullanıcı adı" required />
+        </div>
+
+        <div class="field">
+          <label>Şifre</label>
+          <input id="password" type="password" placeholder="şifre" required />
+        </div>
+
+        <button class="btn" type="submit">Giriş</button>
+      </form>
+
+      <div id="err" class="error" style="display:none;"></div>
+    </div>
+  </div>
+
+<footer class="obshiiFooter">
+  <div class="obshiiBrand">
+    <span class="brandText">Obshii</span>
+    <span class="brandSub">Systems</span>
+  </div>
+</footer>
+
+
+  <script src="login.js"></script>
+</body>
+</html>
